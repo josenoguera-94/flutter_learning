@@ -55,6 +55,35 @@ class _ImageBubble extends StatelessWidget {
           width: size.width * 0.7,
           height: 150,
           fit: BoxFit.cover, // BoxFit.cover es una opción de fit que hace que la imagen cubra el espacio asignado
+          loadingBuilder: (context, child, loadingProgress) {
+            if (loadingProgress == null) return child;
+
+            return Container(
+              width: size.width * 0.7,
+              height: 150,
+              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+              color: Colors.grey[300],
+              child: const Center(child: CircularProgressIndicator()),
+              
+            );
+
+            // return const Center(child: CircularProgressIndicator());
+
+            // para mostrar un indicador de progreso mientras se carga la imagen
+            // return Center(
+            //   child: CircularProgressIndicator(
+            //   value: loadingProgress.expectedTotalBytes != null
+            //     ? loadingProgress.cumulativeBytesLoaded / (loadingProgress.expectedTotalBytes ?? 1)
+            //     : null,
+            //   ),
+            // );
+
+            
+
+          },
+          // loadingBuilder (contex, child, loadingProgress)
+          // - => se le puede pasar un widget personalizado para mostrar mientras se carga la imagen
+          // - {} permite definir un cuerpo
           )
       );
   }
