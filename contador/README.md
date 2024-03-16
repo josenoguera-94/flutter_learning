@@ -1,3 +1,7 @@
-# Contador
+# **Contador**
 
-A new Flutter project.
+This App is a simple counter, Builded to android
+
+## **Demo**
+
+![Contador](app.png)

@@ -1,3 +1,3 @@
 # yes_no_app
 
-A new Flutter project.
+This App is a simple chat interface, Builded to android
