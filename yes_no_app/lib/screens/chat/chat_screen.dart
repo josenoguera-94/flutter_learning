@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:yes_no_app/widgets/chat/my_message_bubble.dart';
 
 // los screen deben llevar en su mayoria Scaffold
 class ChatScreen extends StatelessWidget {
@@ -45,9 +46,9 @@ class _ChatView extends StatelessWidget {
                 // itemBuilder recive (context, index) {} es una función que recibe el contexto, que es el
                 // arbol de widgets y el índice del elemento a renderizar, que listView.builder() está utilizando
                 // o (context, index) => Widget() recive el contexto y el índice y retorna un widget
-                  itemCount: 10, // cantidad de elementos a renderizar si no se especifica será infinito
+                  itemCount: 50, // cantidad de elementos a renderizar si no se especifica será infinito
                   itemBuilder: (BuildContext context, int index) {
-                    return Text( 'Hola mundo $index' );
+                    return MyMessageBubble(); // retorna un widget
                   }
                 )
                 // child: Container(
