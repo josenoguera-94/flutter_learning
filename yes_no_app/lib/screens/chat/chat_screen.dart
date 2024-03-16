@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:yes_no_app/widgets/chat/my_message_bubble.dart';
+import 'package:yes_no_app/widgets/chat/her_message_bubble.dart';
 
 // los screen deben llevar en su mayoria Scaffold
 class ChatScreen extends StatelessWidget {
@@ -48,7 +49,8 @@ class _ChatView extends StatelessWidget {
                 // o (context, index) => Widget() recive el contexto y el índice y retorna un widget
                   itemCount: 50, // cantidad de elementos a renderizar si no se especifica será infinito
                   itemBuilder: (BuildContext context, int index) {
-                    return MyMessageBubble(); // retorna un widget
+                    return index.isEven ? const MyMessageBubble() : const HerMessageBubble(); // isEven es un método que retorna true si el número es par
+                    // return MyMessageBubble(); // retorna un widget
                   }
                 )
                 // child: Container(

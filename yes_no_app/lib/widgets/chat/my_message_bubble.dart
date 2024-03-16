@@ -16,18 +16,18 @@ class MyMessageBubble extends StatelessWidget {
           // height: 50,
           decoration: BoxDecoration(
             color: colors.primary,
-            borderRadius: BorderRadius.circular(20) // BorderRadius.circular() crea un borde redondeado
+            // borderRadius: BorderRadius.circular(20) // BorderRadius.circular() crea un borde redondeado
             // opciones de BorderRadius: BorderRadius.all(), BorderRadius.only(), BorderRadius.vertical(), BorderRadius.horizontal()....
-            // border20: BorderRadius.only(
+            borderRadius: const BorderRadius.only(
 
-                // topLeft: Radius.circular(12),
-                // topRight: Radius.circular(12),
-                // bottomRight: Radius.circular(12),
-            //     ),
+                topLeft: Radius.circular(12),
+                topRight: Radius.circular(12),
+                bottomLeft: Radius.circular(12),
+                ),
           ),
           child: const Padding(
             padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
-            child: Text('Hola', style: TextStyle(color: Colors.white),),
+            child: Text('Dolor ipsum duis cillum', style: TextStyle(color: Colors.white),),
           ),
         ),
         const SizedBox(height: 10)
