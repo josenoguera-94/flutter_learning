@@ -20,6 +20,7 @@ const List<Color> _colorThemes = [
 class AppTheme {
   final int selectedColor;
 
+  // AppTheme({this.selectedColor = 0})
   AppTheme({this.selectedColor = 0}): 
     assert(
       selectedColor >= 0 && selectedColor < _colorThemes.length,
