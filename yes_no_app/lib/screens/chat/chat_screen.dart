@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:yes_no_app/widgets/chat/my_message_bubble.dart';
 import 'package:yes_no_app/widgets/chat/her_message_bubble.dart';
+import 'package:yes_no_app/widgets/message_field_box.dart';
 
 // los screen deben llevar en su mayoria Scaffold
 class ChatScreen extends StatelessWidget {
@@ -57,7 +58,7 @@ class _ChatView extends StatelessWidget {
                 //   color: Colors.red
                 // )
               ),
-              const Text("s")
+              const MessageFieldBox()
           ]
         )
       )

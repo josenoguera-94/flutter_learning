@@ -7,6 +7,21 @@ This repository contains the projects developed in the courses and personal proj
 - [online documentation](https://docs.flutter.dev/)
 - [icons](https://fonts.google.com/icons?selected=Material+Icons)
 - [Yes/No Gifs](https://yesno.wtf/)
+- [Fig Manual commands](https://fig.io/manual/flutter)
+
+## **Commands**
+
+- `flutter create <project_name>`: Create a new Flutter projects
+- `flutter run`: Run the project, you need to be in the project folder
+- `flutter run <file_name>`: Run the project
+- `flutter run -d <device_name>`: Run the project in a specific device
+- `flutter devices`: List all the devices connected
+- `flutter doctor`: Check the status of the Flutter installation
+- `flutter emulators`: List all the emulators
+- `flutter emulators --launch <emulator_name>`: Launch an emulator
+- `flutter emulators --create <emulator_name>`: Create a new emulator
+
+
 
 ## **3 Pasos para crear una aplicación en Flutter**
 
