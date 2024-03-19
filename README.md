@@ -39,3 +39,9 @@ podemos llamar la carpeta segun el gestor de estados que vamos a utilizar. Ejemp
 - **Riverpod**: Es una librería que nos permite manejar el estado de nuestra aplicación de una manera sencilla y eficiente.
 - **Bloc**: Es una librería que nos permite manejar el estado de nuestra aplicación de una manera sencilla y eficiente.
 - **GetX**: Es una librería que nos permite manejar el estado de nuestra aplicación de una manera sencilla y eficiente.
+
+### **Provider**
+
+- `context.watch<ProviderType>()`: Nos permite escuchar los cambios de un provider y redibujar el widget cuando el valor cambie.
+- `context.read<ProviderType>()`: Nos permite leer el valor de un provider pero no escuchar los cambios.
+- `context.select<ProviderType, Type>((value) => value.property)`: Nos permite leer un valor específico de un provider. por ejemplo, para la app de chat si los mensajes cambian pero los demás providers no.
