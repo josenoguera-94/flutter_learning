@@ -28,3 +28,14 @@ This repository contains the projects developed in the courses and personal proj
 1. Construcción de la lógica de negocio
 2. La conexión de la lógica de negocio con nuestros widgets
 3. Creación y diseño de la aplicación
+
+
+## **GESTOR DE ESTADOS**
+
+podemos llamar la carpeta segun el gestor de estados que vamos a utilizar. Ejemplo `provider`, `riverpod`, `bloc`, `getx`.
+
+- **SetState**: Es una librería que nos permite manejar el estado de nuestra aplicación de una manera sencilla y eficiente.
+- **Provider**: Es una librería que nos permite manejar el estado de nuestra aplicación de una manera sencilla y eficiente.
+- **Riverpod**: Es una librería que nos permite manejar el estado de nuestra aplicación de una manera sencilla y eficiente.
+- **Bloc**: Es una librería que nos permite manejar el estado de nuestra aplicación de una manera sencilla y eficiente.
+- **GetX**: Es una librería que nos permite manejar el estado de nuestra aplicación de una manera sencilla y eficiente.
