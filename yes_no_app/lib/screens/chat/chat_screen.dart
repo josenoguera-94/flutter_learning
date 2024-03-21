@@ -54,6 +54,10 @@ class _ChatView extends StatelessWidget {
                 // funciona bajo demanda, a medida que el usuario se desplaza por la lista
                 // otras opciones son ListView.separated() y ListView.custom() ...
 
+                
+                controller: chatProvider.scrollController, // controller es una propiedad que recibe un ScrollController, 
+                
+                
                 // itemBuilder recive (context, index) {} es una función que recibe el contexto, que es el
                 // arbol de widgets y el índice del elemento a renderizar, que listView.builder() está utilizando
                 // o (context, index) => Widget() recive el contexto y el índice y retorna un widget
