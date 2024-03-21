@@ -71,7 +71,10 @@ class _ChatView extends StatelessWidget {
                 //   color: Colors.red
                 // )
               ),
-              const MessageFieldBox()
+              MessageFieldBox(
+                onValue: (value) => chatProvider.sendMessage(value),
+                // onValue: chatProvider.sendMessage, // Cuando la misma cantidad de argumentos se pasan a una función, se puede pasar la función directamente
+              )
           ]
         )
       )

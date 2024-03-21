@@ -2,10 +2,17 @@ import 'package:flutter/material.dart';
 
 
 class MessageFieldBox extends StatelessWidget {
-  const MessageFieldBox({super.key});
+
+  final ValueChanged<String> onValue;
+
+  const MessageFieldBox({
+    super.key,
+    required this.onValue
+  });
 
   @override
   Widget build(BuildContext context) {
+
 
     final textController = TextEditingController(); // TextEditingController es un controlador de texto que permite controlar el texto de un campo de texto
     final FocusNode focusNode = FocusNode(); // FocusNode es un nodo de foco que permite controlar el foco de un widget
@@ -28,8 +35,9 @@ class MessageFieldBox extends StatelessWidget {
           icon: const Icon(Icons.send_outlined),
           onPressed: () {
             final textValue = textController.text; // .text o .value.text
-            print('enviar mensaje $textValue');
+            // print('enviar mensaje $textValue');
             textController.clear();
+            onValue(textValue);
           },
         ),
       );
@@ -45,11 +53,12 @@ class MessageFieldBox extends StatelessWidget {
       controller: textController, // controller es una propiedad que recibe un TextEditingController
       decoration: inputDecoration,
       onFieldSubmitted: (value) { // onFieldSubmitted es una función que recibe el valor del campo de texto cuando se envía
-        print('submitted: $value');
+        // print('submitted: $value');
         textController.clear(); // clear() es un método que permite limpiar el texto del campo de texto
         // focusNode.unfocus(); // unfocus() es un método que permite quitar el foco de un widget
         focusNode.requestFocus(); // requestFocus() es un método que permite solicitar el foco de un widget
         // FocusScope.of(context).unfocus(); // FocusScope.of(context) retorna el foco actual del contexto
+        onValue(value);
       },
       // onChanged: (value) { // onChanged es una función que recibe el valor del campo de texto cuando cambia
       //   print(value);

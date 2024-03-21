@@ -10,8 +10,11 @@ class ChatProvider extends ChangeNotifier {
     const Message(text: 'Como estás?', fromWho: FromWho.me),
   ];
 
-  Future<void> sendMessage(Message message) async {
-    // this.message.add(message);
-    // notifyListeners();
+  Future<void> sendMessage(String text) async {
+
+    final newMessage = Message(text: text, fromWho: FromWho.me);
+    messageList.add(newMessage);
+    
+    notifyListeners(); // notifica a los oyentes que el estado ha cambiado
   }
 }
