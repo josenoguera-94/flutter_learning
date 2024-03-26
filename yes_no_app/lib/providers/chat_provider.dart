@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/semantics.dart';
+// import 'package:flutter/semantics.dart';
 import 'package:yes_no_app/entities/message.dart';
+import 'package:yes_no_app/helpers/get_yes_no_answer.dart';
 
 // provider permite tener el ChangeNotifier
 // de manera global o en un contexto más amplio
@@ -8,7 +9,8 @@ class ChatProvider extends ChangeNotifier {
   // ChangeNotifier es una clase que proporciona notificaciones a sus oyentes cuando cambia el estado.
   
   final ScrollController scrollController = ScrollController(); // ScrollController es un controlador que permite controlar el desplazamiento de un widget
-  
+  final GetYesNoAnswer getYesNoAnswer = GetYesNoAnswer(); // GetYesNoAnswer es una clase que permite obtener una respuesta de la API yesno.wtf
+
   List<Message> messageList = [
     const Message(text: 'Hola', fromWho: FromWho.me),
     const Message(text: 'Como estás?', fromWho: FromWho.me),
@@ -21,8 +23,23 @@ class ChatProvider extends ChangeNotifier {
     final newMessage = Message(text: text, fromWho: FromWho.me);
     messageList.add(newMessage);
 
+    if (text.endsWith('?')) {
+       await otherReply(); // await se o no puede utilizar también
+    }
+
     notifyListeners(); // notifica a los oyentes que el estado ha cambiado
     moveScrollToBottom();
+  }
+
+  Future<void> otherReply() async {
+
+    final otherMessage = await getYesNoAnswer.getAnswer();
+    messageList.add(otherMessage);
+    // final newMessage = Message(text: 'Estoy bien, gracias', fromWho: FromWho.other);
+    // messageList.add(newMessage);
+
+    // notifyListeners();
+    // moveScrollToBottom();
   }
 
 
