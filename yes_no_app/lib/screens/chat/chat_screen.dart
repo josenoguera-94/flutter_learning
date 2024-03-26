@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:yes_no_app/widgets/chat/my_message_bubble.dart';
-import 'package:yes_no_app/widgets/chat/her_message_bubble.dart';
+import 'package:yes_no_app/widgets/chat/other_message_bubble.dart';
 import 'package:yes_no_app/widgets/message_field_box.dart';
 import 'package:yes_no_app/providers/chat_provider.dart';
 import 'package:yes_no_app/entities/message.dart';
@@ -64,11 +64,11 @@ class _ChatView extends StatelessWidget {
                   itemCount: chatProvider.messageList.length,// itemCount: 50, // cantidad de elementos a renderizar si no se especifica será infinito
                   itemBuilder: (BuildContext context, int index) {
                     // return MyMessageBubble(); // retorna un widget
-                    // return index.isEven ? const MyMessageBubble() : const HerMessageBubble(); // isEven es un método que retorna true si el número es par
+                    // return index.isEven ? const MyMessageBubble() : const OtherMessageBubble(); // isEven es un método que retorna true si el número es par
                     final message = chatProvider.messageList[index]; // obtiene el mensaje en la posición index
                     return (message.fromWho == FromWho.me) 
                     ? MyMessageBubble(message: message) 
-                    : HerMessageBubble(message: message);
+                    : OtherMessageBubble(message: message);
                   }
                 )
                 // child: Container(

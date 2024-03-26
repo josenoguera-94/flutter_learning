@@ -8,6 +8,8 @@ This repository contains the projects developed in the courses and personal proj
 - [icons](https://fonts.google.com/icons?selected=Material+Icons)
 - [Yes/No Gifs](https://yesno.wtf/)
 - [Fig Manual commands](https://fig.io/manual/flutter)
+- [quicktype](https://quicktype.io/) - Generate Dart code from JSON
+
 
 ## **Commands**
 

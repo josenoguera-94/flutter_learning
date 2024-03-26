@@ -12,8 +12,8 @@ class ChatProvider extends ChangeNotifier {
   final GetYesNoAnswer getYesNoAnswer = GetYesNoAnswer(); // GetYesNoAnswer es una clase que permite obtener una respuesta de la API yesno.wtf
 
   List<Message> messageList = [
-    const Message(text: 'Hola', fromWho: FromWho.me),
-    const Message(text: 'Como estás?', fromWho: FromWho.me),
+    // const Message(text: 'Hola', fromWho: FromWho.me),
+    // const Message(text: 'Como estás?', fromWho: FromWho.me),
   ];
 
   Future<void> sendMessage(String text) async {

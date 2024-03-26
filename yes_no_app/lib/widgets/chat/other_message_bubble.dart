@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:yes_no_app/entities/message.dart';
 
-class HerMessageBubble extends StatelessWidget {
+class OtherMessageBubble extends StatelessWidget {
 
   final Message message;
 
-  const HerMessageBubble({
+  const OtherMessageBubble({
     super.key,
     required this.message,
     });
@@ -36,7 +36,7 @@ class HerMessageBubble extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 5),
-        _ImageBubble(),
+        _ImageBubble( message.imageUrl! ), // o message.imageUrl ?? ''
         const SizedBox(height: 10)
       ] 
     );
@@ -46,6 +46,10 @@ class HerMessageBubble extends StatelessWidget {
 
 
 class _ImageBubble extends StatelessWidget {
+
+  final String imageUrl;
+
+  const _ImageBubble( this.imageUrl );
 
   @override
   Widget build(BuildContext context) {
@@ -58,7 +62,7 @@ class _ImageBubble extends StatelessWidget {
     return ClipRRect( // ClipRRect es un widget que recorta su widget hijo en un rectángulo redondeado
         borderRadius: BorderRadius.circular(20),
         child: Image.network(
-          'https://yesno.wtf/assets/yes/2-5df1b403f2654fa77559af1bf2332d7a.gif',
+          imageUrl,
           width: size.width * 0.7,
           height: 150,
           fit: BoxFit.cover, // BoxFit.cover es una opción de fit que hace que la imagen cubra el espacio asignado
