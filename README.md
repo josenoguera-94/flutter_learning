@@ -12,7 +12,7 @@ This repository contains the projects developed in the courses and personal proj
 
 
 ## **Commands**
-
+- `flutter create --org com.example <project_name>`: Create a new Flutter projects
 - `flutter create <project_name>`: Create a new Flutter projects
 - `flutter run`: Run the project, you need to be in the project folder
 - `flutter run <file_name>`: Run the project
@@ -47,3 +47,35 @@ podemos llamar la carpeta segun el gestor de estados que vamos a utilizar. Ejemp
 - `context.watch<ProviderType>()`: Nos permite escuchar los cambios de un provider y redibujar el widget cuando el valor cambie.
 - `context.read<ProviderType>()`: Nos permite leer el valor de un provider pero no escuchar los cambios.
 - `context.select<ProviderType, Type>((value) => value.property)`: Nos permite leer un valor específico de un provider. por ejemplo, para la app de chat si los mensajes cambian pero los demás providers no.
+
+## Como cambiar Bundle Id
+
+1. Instalar paquete [change_app_package_name](https://pub.dev/packages/change_app_package_name)
+2. Add Change App Package Name to your `pubspec.yaml` in `dev_dependencies:` section.
+    ```yaml
+    dev_dependencies: 
+        change_app_package_name: ^1.1.0
+    ```
+    if  Not migrated to null safety yet? use old version like this
+    ```yaml
+    dev_dependencies: 
+        change_app_package_name: ^0.1.3
+    ```
+3. `flutter pub get` to install the package.
+4. `flutter pub run change_app_package_name:main com.new.package.name` to change the package name. suggestion: `com.<yourname>.<appname>` es importante el nombre
+
+## Android
+
+- [flutter - android](https://docs.flutter.dev/deployment/android)
+
+
+## Utils
+
+- [themoviedb](https://www.themoviedb.org/)
+- [Create images](https://www.bing.com/images/create)
+
+## Packages
+
+- `flutter_dotenv: ^5.1.0`: A Flutter plugin to use .env files
+- `change_app_package_name: ^1.1.0`: A Flutter plugin to change the package name of Android and iOS apps
+- `flutter_launcher_icons: ^0.13.1`: A Flutter plugin to generate adaptive icons for both iOS and Android
