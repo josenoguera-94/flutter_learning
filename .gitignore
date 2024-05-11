@@ -48,6 +48,7 @@ app.*.map.json
 *.sh
 
 # Others
-flutter-cinemapedia/
 .vscode/
 .vscode
+flutter-cinemapedia/
+toktik_videos/assets/videos/
