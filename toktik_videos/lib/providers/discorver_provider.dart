@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:toktik_videos/entities/videos_post.dart';
+import 'package:toktik_videos/entities/video_post.dart';
 
 class DiscoverProvider extends ChangeNotifier {
 
