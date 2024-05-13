@@ -53,12 +53,52 @@ class _FullScreenPlayerState extends State<FullScreenPlayer> {
     return FutureBuilder(
       future: controller.initialize(), 
       builder: (context, snapshot) { // snapshot es el estado del future
+        if (snapshot.connectionState != ConnectionState.done) { // ConnectionState.done es un estado de conexión que indica que el future ha completado su ejecución
+          return const Center(
+            child: CircularProgressIndicator(strokeWidth: 2, color: Colors.blueAccent),
+          );
+        }
 
-        return const Center(
-          child: CircularProgressIndicator(strokeWidth: 2, color: Colors.blueAccent),
+        return AspectRatio(
+          aspectRatio: controller.value.aspectRatio,
+          child: Stack(
+            children: [
+              VideoPlayer(controller),
+
+              // Gradiente
+
+              // Texto
+              Positioned(
+                bottom: 50,
+                left: 20,
+                child: _VideoCaption(caption: widget.caption),
+              )
+            ],
+          )
         );
-
       }
+    );
+  }
+}
+
+
+class _VideoCaption extends StatelessWidget {
+
+  final String caption;
+
+  const _VideoCaption({
+    required this.caption
+  });
+
+  @override
+  Widget build(BuildContext context){
+
+    final size = MediaQuery.of(context).size;
+    final titleStyle = Theme.of(context).textTheme.titleLarge;
+
+    return SizedBox(
+      width: size.width * 0.6,
+      child: Text(caption, style: titleStyle, maxLines: 2) // overflow: TextOverflow.ellipsis, maxLines es la cantidad de líneas que se mostrarán
     );
   }
 }
