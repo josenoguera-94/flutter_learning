@@ -79,3 +79,5 @@ podemos llamar la carpeta segun el gestor de estados que vamos a utilizar. Ejemp
 - `flutter_dotenv: ^5.1.0`: A Flutter plugin to use .env files
 - `change_app_package_name: ^1.1.0`: A Flutter plugin to change the package name of Android and iOS apps
 - `flutter_launcher_icons: ^0.13.1`: A Flutter plugin to generate adaptive icons for both iOS and Android
+- `animate_do: ^3.3.4`: A Flutter package to create beautiful animations
+- `intl: ^0.19.0`: A Flutter package to internationalize your app

@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:toktik_videos/entities/video_post.dart';
 import 'package:toktik_videos/helpers/formats.dart';
@@ -17,7 +18,15 @@ class VideoButtons extends StatelessWidget {
     return Column(
       children: [
         _CustomIconButton(value: video.likes, iconColor: Colors.red, iconData: Icons.favorite),
+        const SizedBox(height: 20,),
         _CustomIconButton(value: video.views, iconColor: Colors.white, iconData: Icons.remove_red_eye_outlined),
+        const SizedBox(height: 20,),
+        SpinPerfect(
+          infinite: true,
+          duration: const Duration(seconds: 2),
+          child: const _CustomIconButton(value: 0, iconData: Icons.play_circle_outline),
+        ), // SpinPerfect es un widget que permite aplicar una animación de rotación a un widget
+        // _CustomIconButton(value: video.comments, iconColor: Colors.white, iconData: Icons.comment),
       ]
     );
   }    
@@ -45,7 +54,7 @@ class _CustomIconButton extends StatelessWidget {
           onPressed: () {},
           icon: Icon(iconData, color: iconColor, size: 30), // Icons.favorite_border
        ),
-      Text(Formats.numberFormat(value.toDouble())), // '${}'
+       if (value != 0) Text(Formats.numberFormat(value.toDouble())), // '${}'
       ]
     );
   }
