@@ -88,3 +88,8 @@ path:`´<project root>/android/app/src/main/AndroidManifest.xml`, pueden ir ante
 ```xml
 <uses-permission android:name="android.permission.INTERNET"/>
 ```
+
+## Notas
+
+- Stateful Widget: Es un widget que puede cambiar su estado durante la ejecución de la aplicación. Tiene un ciclo de vida que se compone de tres métodos: `initState`, `build` y `dispose`.
+- Stateless Widget: Es un widget que no puede cambiar su estado durante la ejecución de la aplicación. Su contenido no puede variar. No tiene un ciclo de vida.
