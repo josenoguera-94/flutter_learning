@@ -55,7 +55,7 @@ class HomeSceen extends StatelessWidget {
       floatingActionButton: FloatingActionButton( // se puede agregar cualquier widget.
         onPressed: () { // onPressed es una propiedad que nos permite agregar una función al botón. puede ser nulo
           counter++;
-          print(counter);
+          // print(counter);
         },
         child: const Icon(Icons.add), //Icon es un widget que nos permite agregar un icono.
       )
