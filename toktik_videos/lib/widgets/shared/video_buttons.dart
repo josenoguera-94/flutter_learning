@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:toktik_videos/entities/video_post.dart';
+import 'package:toktik_videos/helpers/formats.dart';
 
 
 class VideoButtons extends StatelessWidget {
@@ -44,7 +45,7 @@ class _CustomIconButton extends StatelessWidget {
           onPressed: () {},
           icon: Icon(iconData, color: iconColor, size: 30), // Icons.favorite_border
        ),
-      Text('$value'),
+      Text(Formats.numberFormat(value.toDouble())), // '${}'
       ]
     );
   }
