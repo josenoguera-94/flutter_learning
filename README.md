@@ -81,3 +81,10 @@ podemos llamar la carpeta segun el gestor de estados que vamos a utilizar. Ejemp
 - `flutter_launcher_icons: ^0.13.1`: A Flutter plugin to generate adaptive icons for both iOS and Android
 - `animate_do: ^3.3.4`: A Flutter package to create beautiful animations
 - `intl: ^0.19.0`: A Flutter package to internationalize your app
+
+## Permisos
+path:`´<project root>/android/app/src/main/AndroidManifest.xml`, pueden ir antes o despues de `<application>...</application>`
+
+```xml
+<uses-permission android:name="android.permission.INTERNET"/>
+```

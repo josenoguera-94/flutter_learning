@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:toktik_videos/entities/video_post.dart';
 import 'package:toktik_videos/widgets/shared/video_buttons.dart';
+import 'package:toktik_videos/widgets/video/full_screen_player.dart';
 
 
 class VideoScrollableView extends StatelessWidget {
@@ -40,6 +41,15 @@ class VideoScrollableView extends StatelessWidget {
         return Stack( // Stack permite apilar varios widgets uno encima del otro
           children: [
             // video player + gradiente
+
+            SizedBox.expand(
+              // width: double.infinity,
+              // height: double.infinity,
+              child: FullScreenPlayer(
+                videoUrl: videoPost.videoUrl,
+                caption: videoPost.name,
+              ),
+            ),
 
             // botones
             Positioned( // Positioned es un widget que permite posicionar un widget en un Stack

@@ -20,3 +20,4 @@
 - [animate_do - Paquete de animaciones para Flutter](https://www.youtube.com/watch?v=oreOdtQ124M)
 - [Flutter: animate_do - Nivel Intermedio](https://www.youtube.com/watch?v=QLUI3Pxw1Z8)
 - [Flutter: animate_do - Nueva característica](https://www.youtube.com/watch?v=w698MRVTB2E)
+- [video player](https://docs.flutter.dev/cookbook/plugins/play-video)
