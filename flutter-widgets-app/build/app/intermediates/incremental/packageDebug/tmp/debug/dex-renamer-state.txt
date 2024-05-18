@@ -1,0 +1,4 @@
+#Fri May 17 22:37:31 COT 2024
+base.0=D\:\\programacion\\flutter\\flutter-widgets-app\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+path.0=classes.dex
+renamed.0=classes.dex
