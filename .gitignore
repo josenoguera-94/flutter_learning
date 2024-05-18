@@ -51,4 +51,5 @@ app.*.map.json
 .vscode/
 .vscode
 flutter-cinemapedia/
+*/build/
 toktik_videos/assets/videos/
