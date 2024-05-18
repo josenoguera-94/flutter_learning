@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:toktik_videos/providers/discorver_provider.dart';
-import 'package:toktik_videos/widgets/shared/video_scrollable_view.dart';
+import 'package:toktik_videos/presentation/widgets/shared/video_scrollable_view.dart';
 
 
 class DiscoverScreen extends StatelessWidget {

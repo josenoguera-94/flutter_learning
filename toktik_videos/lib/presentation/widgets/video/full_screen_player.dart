@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:toktik_videos/widgets/video/video_background.dart';
+import 'package:toktik_videos/presentation/widgets/video/video_background.dart';
 import 'package:video_player/video_player.dart'; // importM
 
 

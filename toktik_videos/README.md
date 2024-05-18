@@ -11,6 +11,8 @@
 - Aserciones
 - Stacks
 - Controladores de video
+- Repositorios
+- Datasources
 
 ## Links:
 

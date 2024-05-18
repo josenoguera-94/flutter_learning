@@ -73,6 +73,7 @@ podemos llamar la carpeta segun el gestor de estados que vamos a utilizar. Ejemp
 
 - [themoviedb](https://www.themoviedb.org/)
 - [Create images](https://www.bing.com/images/create)
+- [Material](https://m3.material.io/develop/flutter)
 
 ## Packages
 
@@ -81,15 +82,28 @@ podemos llamar la carpeta segun el gestor de estados que vamos a utilizar. Ejemp
 - `flutter_launcher_icons: ^0.13.1`: A Flutter plugin to generate adaptive icons for both iOS and Android
 - `animate_do: ^3.3.4`: A Flutter package to create beautiful animations
 - `intl: ^0.19.0`: A Flutter package to internationalize your app
+- `go_router: ^14.1.2`: A Flutter package to manage routes [navigation](https://docs.flutter.dev/ui/navigation)
 
 ## Permisos
+- [permisos](https://developer.android.com/reference/android/Manifest.permission)
 path:`´<project root>/android/app/src/main/AndroidManifest.xml`, pueden ir antes o despues de `<application>...</application>`
 
 ```xml
-<uses-permission android:name="android.permission.INTERNET"/>
+<uses-permission android:name="android.permission.INTERNET"/> <!-- Para acceder a internet -->
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- Para acceder al estado de la red -->
 ```
+
+## Flujo de arquitecura limpia
+
+1. UI: Interfaz de usuario
+2. Presentación: Lógica de presentación: provider, riverpod, bloc, getx
+3. Casos de uso: Lógica de negocio
+4. Repositorio: Conexión con la base de datos
+5. Información regresa al UI
 
 ## Notas
 
 - Stateful Widget: Es un widget que puede cambiar su estado durante la ejecución de la aplicación. Tiene un ciclo de vida que se compone de tres métodos: `initState`, `build` y `dispose`.
 - Stateless Widget: Es un widget que no puede cambiar su estado durante la ejecución de la aplicación. Su contenido no puede variar. No tiene un ciclo de vida.
+- La palabra Builder significa que se va a contruir en tiempo de ejecución.
+- deeplinking: Es una técnica que permite a una aplicación móvil ser invocada por otra aplicación, o por un enlace web.
