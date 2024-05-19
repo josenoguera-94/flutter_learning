@@ -10,9 +10,6 @@ const cards = <Map<String,dynamic>>[
 ];
 
 
-
-
-
 class CardsScreen extends StatelessWidget {
 
   static const String name = 'cards_screen';
@@ -39,7 +36,8 @@ class _CardsView extends StatelessWidget {
       child: Column(
         children: [
           
-          ...cards.map( 
+          // devuelve un nuevo iterable con los elementos de la lista cards
+          ...cards.map( // ... operador de propagación para descomponer la lista
             (card) => _CardType1( elevation: card['elevation'], label: card['label'] ),
           ),
 
@@ -211,7 +209,7 @@ class _CardType4 extends StatelessWidget {
     final colors = Theme.of(context).colorScheme;
 
     return Card(
-      clipBehavior: Clip.hardEdge,
+      clipBehavior: Clip.hardEdge, // Clip.hardEdge para que el contenido no se salga del borde
       elevation: elevation,
       child: Stack(
         children: [

@@ -24,6 +24,9 @@ class _InfiniteScrollScreenState extends State<InfiniteScrollScreen> {
     super.initState();
 
     scrollController.addListener(() {
+      // scrollController.position.maxScrollExtent; // Para saber el máximo scroll
+      // scrollController.position.pixels; // Para saber el scroll actual
+
         if( (scrollController.position.pixels + 500) >= scrollController.position.maxScrollExtent ) {
           // Load next page
           loadNextPage();
@@ -81,7 +84,7 @@ class _InfiniteScrollScreenState extends State<InfiniteScrollScreen> {
     if( scrollController.position.pixels + 100 <= scrollController.position.maxScrollExtent ) return;
 
     scrollController.animateTo(
-      scrollController.position.pixels + 120, 
+      scrollController.position.pixels + 120, // 0, subira al inicio 
       duration: const Duration(milliseconds: 300), 
       curve: Curves.fastOutSlowIn
     );
@@ -92,17 +95,23 @@ class _InfiniteScrollScreenState extends State<InfiniteScrollScreen> {
 
   void addFiveImages() {
     final lastId = imagesIds.last;
-
+    // imagesIds.clear(); // Para que no se dupliquen las imágenes
+    // imagesIds.add(value) // Para agregar un valor
     imagesIds.addAll(
       [1,2,3,4,5].map((e) => lastId + e)
     );
+
+    // setState(() {
+      
+    // });
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
-      body: MediaQuery.removePadding(
+      body: MediaQuery.removePadding( // MediaQuery.removePadding para que no haya padding en la parte superior e inferior del ListView
+        // removeTop y removeBottom para que no haya padding en la parte superior e inferior del ListView
         context: context,
         removeTop: true,
         removeBottom: true,
@@ -110,11 +119,11 @@ class _InfiniteScrollScreenState extends State<InfiniteScrollScreen> {
           onRefresh: onRefresh,
           edgeOffset: 10,
           strokeWidth: 2,
-          child: ListView.builder(
+          child: ListView.builder( // ListView.builder para que se rendericen solo los elementos que se ven en pantalla, bajo demanda
             controller: scrollController,
             itemCount: imagesIds.length,
             itemBuilder: (context, index) {
-              return FadeInImage(
+              return FadeInImage( // FadeInImage es un widget que muestra una imagen con un efecto de fade in, es decir muestra una imagen mientras se carga la imagen definitiva
                 fit: BoxFit.cover,
                 width: double.infinity,
                 height: 300,

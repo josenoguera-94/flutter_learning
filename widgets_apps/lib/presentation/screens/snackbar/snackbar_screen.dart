@@ -9,7 +9,7 @@ class SnackbarScreen extends StatelessWidget {
 
   void showCustomSnackbar( BuildContext context ) {
 
-    ScaffoldMessenger.of(context).clearSnackBars();
+    ScaffoldMessenger.of(context).clearSnackBars(); // .clearSnackBars() para limpiar los Snackbars en cola
 
     final snakback = SnackBar(
       content: const Text('Hola Mundo'),
@@ -25,7 +25,7 @@ class SnackbarScreen extends StatelessWidget {
 
     showDialog(
       context: context, 
-      barrierDismissible: false,
+      barrierDismissible: false, // barrierDismissible: permite al usuario cerrar o no el diálogo al hacer clic fuera de él
       builder: (context) => AlertDialog(
         title: const Text('¿Estás seguro?'),
         content: const Text('Ex sit ea est in. Aliqua cillum amet tempor id officia tempor adipisicing amet commodo aliqua. Ut eiusmod cillum nulla sit ut non minim laboris cupidatat exercitation minim magna pariatur est. Nisi aute ea id enim sint occaecat aute adipisicing duis qui nisi. Nulla cillum nulla eiusmod enim magna sint eu dolor occaecat cupidatat.'),

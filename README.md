@@ -74,6 +74,8 @@ podemos llamar la carpeta segun el gestor de estados que vamos a utilizar. Ejemp
 - [themoviedb](https://www.themoviedb.org/)
 - [Create images](https://www.bing.com/images/create)
 - [Material](https://m3.material.io/develop/flutter)
+- [demos](https://flutter.github.io/samples/web/material_3_demo/)
+- [picsum.photos](https://picsum.photos/)
 
 ## Packages
 
@@ -107,3 +109,5 @@ path:`´<project root>/android/app/src/main/AndroidManifest.xml`, pueden ir ante
 - Stateless Widget: Es un widget que no puede cambiar su estado durante la ejecución de la aplicación. Su contenido no puede variar. No tiene un ciclo de vida.
 - La palabra Builder significa que se va a contruir en tiempo de ejecución.
 - deeplinking: Es una técnica que permite a una aplicación móvil ser invocada por otra aplicación, o por un enlace web.
+- splash screen: Es una pantalla que se muestra al inicio de la aplicación mientras se cargan los recursos necesarios para que la aplicación funcione.
+- stack vs column: Stack es un widget que permite apilar widgets uno encima de otro. Column es un widget que permite apilar widgets uno debajo de otro.

@@ -22,9 +22,9 @@ class _ProgressView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
+    return const Center(
       child: Column(
-        children: const [
+        children: [
           SizedBox(height: 30),
           Text('Circula progress indicator'),
           SizedBox(height: 10),
@@ -47,7 +47,7 @@ class _ControlledProgresIndicator extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return StreamBuilder(
+    return StreamBuilder( // StreamBuilder para controlar el valor del progreso
       stream: Stream.periodic( const Duration( milliseconds: 300 ), (value) {
         return (value * 2) / 100; // 0.0, 1.0
       }).takeWhile((value) => value < 100 ),

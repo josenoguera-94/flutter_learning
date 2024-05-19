@@ -9,6 +9,7 @@ import 'package:widgets_app/presentation/widgets/side_menu.dart';
 class HomeScreen extends StatelessWidget {
 
   static const String name = 'home_screen';
+  // static sirve para acceder a la propiedad sin necesidad de instanciar la clase
 
   const HomeScreen({super.key});
 

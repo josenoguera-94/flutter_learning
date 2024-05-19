@@ -41,6 +41,8 @@ class _AppTutorialScreenState extends State<AppTutorialScreen> {
 
     pageviewController.addListener(() {
 
+      // los pages no son enteros, son decimales que indican la posición de la página
+      // 0.0, 0.3,... 1.0, 1.3, 2.0, 2.3, ...
       final page = pageviewController.page ?? 0;
       if ( !endReached && page >= (slides.length - 1.5) ) {
         setState(() {
@@ -52,6 +54,8 @@ class _AppTutorialScreenState extends State<AppTutorialScreen> {
 
   }
 
+  // cada vez que se utilice un controlador, se debe liberar la memoria
+  // con dispose
   @override
   void dispose() {
     pageviewController.dispose();
@@ -68,7 +72,7 @@ class _AppTutorialScreenState extends State<AppTutorialScreen> {
       body: Stack(
         children: [
 
-          PageView(
+          PageView( // PageView is a scrollable list that works page by page
             controller: pageviewController,
             physics: const BouncingScrollPhysics(),
             children: slides.map(
@@ -101,7 +105,8 @@ class _AppTutorialScreenState extends State<AppTutorialScreen> {
                   child: const Text('Comenzar'),
                 ),
               )
-            ): const SizedBox(),
+            ): const SizedBox(), 
+            // se aconseja usar un SizedBox para que no se redibuje el widget
 
         ],
       ),

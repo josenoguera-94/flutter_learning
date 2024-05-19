@@ -21,8 +21,9 @@ class _AnimatedScreenState extends State<AnimatedScreen> {
   void changeShape() {
 
     final random = Random();
-
-    width = random.nextInt(300) + 120;
+    // nextInt, nextDouble, nextBool, nextIntFromTo, nextDoubleFromTo
+    // nextInt(10) 0 a 9, nextInt(10) + 20; 20 a 29
+    width = random.nextInt(300) + 120; // 120 a 420
     height = random.nextInt(300) + 120;
     borderRadius = random.nextInt(100) + 20;
     
@@ -47,7 +48,7 @@ class _AnimatedScreenState extends State<AnimatedScreen> {
       body: Center(
         child: AnimatedContainer(
           duration: const Duration( milliseconds: 400 ),
-          curve: Curves.elasticOut,
+          curve: Curves.elasticOut, // Curves.bounceOut, Curves.easeInOut, Curves.elasticOut es el tipo de animación
           width: width <= 0 ? 0 : width,
           height: height <= 0 ? 0 : height,
           decoration: BoxDecoration(

@@ -94,3 +94,6 @@ final appRouter = GoRouter(
     // ),
   ],
 );
+
+
+// context.go(Uri(path: '/users/123', queryParameters: {'filter': 'abc'}).toString());

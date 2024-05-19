@@ -32,6 +32,7 @@ class _UiControlsViewState extends State<_UiControlsView> {
   bool wantsBreakfast = false;
   bool wantsLunch = false;
   bool wantsDinner = false;
+  bool isSwitched = true;
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +47,12 @@ class _UiControlsViewState extends State<_UiControlsView> {
             isDeveloper = !isDeveloper;
           }),
         ),
-
+        Switch(
+          value: isSwitched,
+          onChanged: (value) => setState(() {
+            isSwitched = !isSwitched;
+          }),
+        ),
         ExpansionTile(
           title: const Text('Vehículo de transporte'),
           subtitle: Text('$selectedTransportation'),

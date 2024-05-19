@@ -1,5 +1,7 @@
 # widgets_app
 
+- [AnimatedContainer](https://api.flutter.dev/flutter/widgets/AnimatedContainer-class.html)
+
 - Navegación entre pantallas
 - Nuevos widgets
 - Botones y sus variantes

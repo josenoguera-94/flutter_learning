@@ -17,7 +17,8 @@ class ButtonsScreen extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         child: const Icon( Icons.arrow_back_ios_new_rounded ),
         onPressed: (){
-          context.pop();
+          context.pop(); // GoRouter: regresar a la pantalla anterior
+          // similar a Navigator.of(context).pop();
         },
       ),
     );
@@ -36,7 +37,7 @@ class _ButtonsView extends StatelessWidget {
       width: double.infinity,
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
-        child: Wrap(
+        child: Wrap( // Wrap para que los elementos se acomoden en filas
           spacing: 10,
           alignment: WrapAlignment.center,
           children: [
@@ -78,7 +79,7 @@ class _ButtonsView extends StatelessWidget {
               onPressed: (){}, 
               icon: const Icon( Icons.app_registration_rounded),
               style: ButtonStyle(
-                backgroundColor: MaterialStatePropertyAll(colors.primary),
+                backgroundColor: MaterialStatePropertyAll(colors.primary), // MaterialStatePropertyAll para cambiar el color del icono y que mantenga todas las funcionalidades
                 iconColor: const MaterialStatePropertyAll(Colors.white),
               ),
             ),
@@ -100,12 +101,12 @@ class CustomButton extends StatelessWidget {
     final colors = Theme.of(context).colorScheme;
 
 
-    return ClipRRect(
+    return ClipRRect( // ClipRRect para redondear los bordes
       borderRadius: BorderRadius.circular(20),
-      child: Material(
+      child: Material( // Material es un widget que permite agregar efectos personalizados
         color: colors.primary,
-        child: InkWell(
-          onTap: () {},
+        child: InkWell( // InkWell es un widget que permite agregar efectos de tinta al presionar
+          onTap: () {}, // onTap para agregar la acción al presionar el botón, null para deshabilitar el botón
           child: const Padding(
             padding: EdgeInsets.symmetric( horizontal: 20, vertical: 10),
             child: Text('Hola Mundo', style: TextStyle(color: Colors.white))
