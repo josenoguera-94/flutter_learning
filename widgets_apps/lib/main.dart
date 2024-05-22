@@ -6,7 +6,7 @@ import 'package:widgets_app/presentation/providers/theme_provider.dart';
 
 void main() {
   runApp(
-    const ProviderScope(
+    const ProviderScope( // ProviderScope es un widget que permite acceder a los providers
       child: MainApp()
     )
   );
@@ -26,6 +26,7 @@ class MainApp extends ConsumerWidget {
       title: 'Flutter Widgets',
       routerConfig: appRouter,
       debugShowCheckedModeBanner: false,
+      // theme: AppTheme(selectedColor: selectedColor, isDarkmode: isDarkmode).getTheme(),
       theme: appTheme.getTheme(),
     );
 

@@ -36,6 +36,8 @@ class AppTheme {
   );
 
 
+  //copyWith es un método que permite copiar para modificar los valores de un objeto
+  // Se hace una copia del objeto con los valores que se pasen
   AppTheme copyWith({
     int? selectedColor,
     bool? isDarkmode

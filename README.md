@@ -48,6 +48,38 @@ podemos llamar la carpeta segun el gestor de estados que vamos a utilizar. Ejemp
 - `context.read<ProviderType>()`: Nos permite leer el valor de un provider pero no escuchar los cambios.
 - `context.select<ProviderType, Type>((value) => value.property)`: Nos permite leer un valor específico de un provider. por ejemplo, para la app de chat si los mensajes cambian pero los demás providers no.
 
+
+### Riverpod
+
+- [riverpod](https://riverpod.dev/)
+- [riverpod v2](https://docs-v2.riverpod.dev/)
+- [code_generation](https://docs-v2.riverpod.dev/docs/concepts/about_code_generation)
+
+Riverpord es una librería que nos permite manejar el estado de nuestra aplicación de una manera sencilla y eficiente. A diferencia de Provider, **no depende del contexto**.
+
+**Pros:**
+- Es la forma recomendada por Riverpod
+- Sintaxis mucho más simple
+- Determina automáticamente el provider acorde a la necesidad
+
+**Cons:**
+- Hay que mantener un watch o ejecutar el generador en cada cambio que hagamos en los providers
+- flutter pub run build_runner watch
+- Un paquete adicional de riverpod_generator como dependencia de desarrollo (que realmente no es gran problema)
+
+**Tipos:**
+
+- **Provider**: Es un provider que no depende de ningún otro provider.
+- **ChangeNotifierProvider**: Es un provider que depende de un ChangeNotifier.
+- **StateNotifierProvider**: Es un provider que depende de un StateNotifier.
+- **FutureProvider**: Es un provider que depende de un Future.
+- **StreamProvider**: Es un provider que depende de un Stream.
+- **StateProvider**: Es un provider que depende de un valor inmutable.
+- **ScopedProvider**: Es un provider que depende de un valor que se encuentra en un contexto superior.
+- **(Async)NotifierProvider**: 
+
+### **Bloc**
+
 ## Como cambiar Bundle Id
 
 1. Instalar paquete [change_app_package_name](https://pub.dev/packages/change_app_package_name)
@@ -85,6 +117,7 @@ podemos llamar la carpeta segun el gestor de estados que vamos a utilizar. Ejemp
 - `animate_do: ^3.3.4`: A Flutter package to create beautiful animations
 - `intl: ^0.19.0`: A Flutter package to internationalize your app
 - `go_router: ^14.1.2`: A Flutter package to manage routes [navigation](https://docs.flutter.dev/ui/navigation)
+- `flutter_riverpod: ^2.2.0`: A Flutter package to manage the state of your app
 
 ## Permisos
 - [permisos](https://developer.android.com/reference/android/Manifest.permission)
@@ -111,3 +144,13 @@ path:`´<project root>/android/app/src/main/AndroidManifest.xml`, pueden ir ante
 - deeplinking: Es una técnica que permite a una aplicación móvil ser invocada por otra aplicación, o por un enlace web.
 - splash screen: Es una pantalla que se muestra al inicio de la aplicación mientras se cargan los recursos necesarios para que la aplicación funcione.
 - stack vs column: Stack es un widget que permite apilar widgets uno encima de otro. Column es un widget que permite apilar widgets uno debajo de otro.
+- el notch es la muesca que tienen algunos dispositivos en la parte superior de la pantalla. hay que tener en cuenta para que no se superponga con el contenido de la aplicación.
+
+## **Widgets**
+
+- `AnimatedContainer`: Es un widget que permite animar la transición de un contenedor de un estado a otro.
+- `AppBar`: Es un widget que permite crear una barra de navegación en la parte superior de la aplicación.
+- `BottomNavigationBar`: Es un widget que permite crear una barra de navegación en la parte inferior de la aplicación.
+- `Card`: Es un widget que permite crear una tarjeta con una sombra y bordes redondeados.
+- `FloatingActionButton`: Es un widget que permite crear un botón flotante en la parte inferior derecha de la aplicación.
+- `GridView`: Es un widget que permite crear una cuadrícula de elementos.

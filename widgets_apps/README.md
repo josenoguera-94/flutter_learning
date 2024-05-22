@@ -16,3 +16,5 @@
 - Configuraciones de router
 - Propio
 - De terceros
+- Aprender sobre "Draawers" menú laterales
+- Gestor de estado Riverpod

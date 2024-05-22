@@ -23,9 +23,11 @@ class _SideMenuState extends State<SideMenu> {
   Widget build(BuildContext context) {
 
     final hasNotch = MediaQuery.of(context).viewPadding.top > 35;
-    
+    // MediaQuery.of(context).viewPadding.top es la altura del notch en la parte superior del dispositivo
+    // print(Plataform.isIOS);
+   // print(Plataform.isAndroid);
 
-    return NavigationDrawer(
+    return NavigationDrawer( // NavigationDrawer es un widget que permite crear un menú lateral
       selectedIndex: navDrawerIndex,
       onDestinationSelected: (value) {
 
@@ -34,8 +36,13 @@ class _SideMenuState extends State<SideMenu> {
         });
 
         final menuItem = appMenuItems[value];
-        context.push( menuItem.link );
-        widget.scaffoldKey.currentState?.closeDrawer();
+        context.push( menuItem.link ); 
+        // .push() es un método de GoRouter que permite navegar a una ruta
+        // .go() es un método de GoRouter que permite navegar a una ruta pero no apila la ruta actual, 
+        //es decir, no se puede regresar a la ruta anterior
+        widget.scaffoldKey.currentState?.closeDrawer(); // openDrawer(), closeDrawer(), isDrawerOpen 
+        // widget hace referencia a la clase padre, en este caso al StatefulWidget del SideMenu
+        // y no al State del SideMenu
 
       },
       children: [
@@ -45,7 +52,7 @@ class _SideMenuState extends State<SideMenu> {
           child: const Text('Main'),
         ),
 
-        ...appMenuItems
+        ...appMenuItems // ...appMenuItems es un spread operator que permite desglosar una lista
           .sublist(0,3)
           .map((item) => NavigationDrawerDestination(
             icon: Icon( item.icon ), 

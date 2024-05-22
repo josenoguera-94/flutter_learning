@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:widgets_app/config/menu/menu_items.dart';
 import 'package:widgets_app/presentation/widgets/side_menu.dart';
+// import 'dart:io' show Platform;
 // import 'package:widgets_app/presentation/screens/cards/cards_screen.dart';
 
 
@@ -16,15 +17,18 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    final scaffoldKey = GlobalKey<ScaffoldState>();
-
+    final scaffoldKey = GlobalKey<ScaffoldState>(); 
+    // GlobalKey es una clave única para identificar un widget
+    // GlobalKey<ScaffoldState> es una clave única para identificar un ScaffoldState
+    // scaffoldKey tiene el estado de un Scaffold, es decir, se puede acceder a las propiedades de Scaffold
+    // si tiene drawer, endDrawer, scaffoldKey.currentState?.openDrawer(), scaffoldKey.currentState?.closeDrawer()...
     return Scaffold(
       key: scaffoldKey,
       appBar: AppBar(
         title: const Text('Flutter + Material 3'),
       ),
       body: const _HomeView(),
-      drawer: SideMenu( scaffoldKey: scaffoldKey )
+      drawer: SideMenu( scaffoldKey: scaffoldKey ) // drawer es un widget que permite crear un menú lateral, endDrawer es para el menú derecho
     );
   }
 }
