@@ -53,3 +53,6 @@ app.*.map.json
 flutter-cinemapedia/
 */build/
 toktik_videos/assets/videos/
+
+
+*.code-workspace
